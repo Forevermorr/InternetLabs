@@ -1,0 +1,87 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+   
+label {
+	font-size: 15px;
+}
+
+.img {
+	border-radius: 25px;
+	height: 150px;
+	width: 200px;
+}
+
+.clearbtn {
+	background-color: red;
+	border-color: red;
+}
+
+.clearbtn:hover {
+	background-color: #AC1D1D;
+	border-color: #AC1D1D;
+}
+
+form.sort {
+    width: 85%;
+	margin: 0px auto 0px auto;
+}
+
+input.form-control, select.form-control, textarea.form-control {
+    margin-top: 7px;
+}
+
+
+table.tab {
+    width: 85%;
+    margin: 0px auto 0px auto;
+    border-collapse: separate;
+    border-spacing: 0 1em;
+    margin-top: 50px;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    display: block;
+}
+
+tbody.container.text-center.mt-3.pos {
+    height: 100px;
+    margin: 20px auto 10px auto;
+    border: 1px solid lightgrey;
+    border-radius: 16px;
+    font-size: 17px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+td.p-2.img_path img {
+    margin-left: 30px;
+	justify-content: center;
+}
+
+td.p-2.img_path {
+    width: 20%;
+    height: 97%;
+    text-align: left;
+}
+
+td.p-2.goal {
+    width: 30%;
+    text-align: center;
+}
+
+td.p-2.id_customer {
+    width: 15%;
+    text-align: center;
+}
+
+td.p-2.comment {
+    width: 25%;
+    text-align: center;
+}
+
+td.p-2.cost {
+    width: 10%;
+    text-align: center;
+}
