@@ -9,6 +9,7 @@ $DateBirth = htmlspecialchars($_POST["DateBirth"]);
 $Address = htmlspecialchars($_POST["Address"]);
 $Gender = htmlspecialchars($_POST["Gender"]);
 $Salt = "3jtn583hab3j7h902177215uq01385k";
+$regex = "/^[\S\s]*(?=.+[A-Z])(?=.+[a-z])(?=.+\d)(?=.+[$&+,:;=?@#|'<>.^*()%!])(?=.+[\s])(?=.+[-])(?=.+[_])[\S\s]*/";
 
 $arrayerrors = [
     "errfio" => "",
@@ -47,8 +48,7 @@ if(isset($_POST['register'])){
         $arrayerrors['errfio'] = 'Заполните ФИО полностью!';
         $errors++;
     }
-
-    $regex = "/^[\S\s]*(?=.+[A-Z])(?=.+[a-z])(?=.+\d)(?=.+[$&+,:;=?@#|'<>.^*()%!])(?=.+[\s])(?=.+[-])(?=.+[_])[\S\s]*/";
+ 
     if (!preg_match($regex, $Password1) || preg_match("/^(?=.*[А-Я])(?=.*[а-я])$/", $Password1) || strlen($Password1) <= 5) {
         $arrayerrors['errpassword'] = "Пароль должен состоять из латинских букв разного регистра, </br> спецсимволов, пробелов, дефисов, подчёркиваний и цифр!";
         $errors++;
@@ -75,7 +75,7 @@ if(isset($_POST['register'])){
     }
 
     if($errors == 0){
-		$id = uniqid();
+	$id = uniqid();
         $PasswordHash = md5($Salt . $Password1);
         $query = "INSERT INTO users (Login, Password, FIO, Address, Gender, Date_birth, ID) VALUES (:Login, :PasswordHash, :FIO, :Address, :Gender, :Date_birth, :ID)";
         $resultQuery = $mysql->prepare($query);
