@@ -10,16 +10,16 @@ $('#button').click(function(e)
     let error = false
     let textError = ''
     const regex = new RegExp("^(?=\\s*\\S).*$");
-    const regexYear = new RegExp("^[1-9][0-9]*$");
+    const regexCost = new RegExp("^[1-9][0-9]*$");
     if(!regex.test(name) || !regex.test(des))
     {
         error = true
         textError = "Заполните все поля"
     }
-    if(!regexYear.test(cost))
+    if(!regexCost.test(cost))
     {
         error = true
-        textError = "Неккоректный ввод"
+        textError = "Некорректный ввод"
     }
     if(ava)
     {
@@ -87,13 +87,13 @@ const editFunction = (id, pathLastFile) =>
     let error = false
     let textError = ''
     const regex = new RegExp("^(?=\\s*\\S).*$");
-    const regexYear = new RegExp("^[1-9][0-9]*$");
+    const regexCost = new RegExp("^[1-9][0-9]*$");
     if(!regex.test(name) || !regex.test(des))
     {
         error = true
         textError = "Заполните все поля"
     }
-    if(!regexYear.test(cost))
+    if(!regexCost.test(cost))
     {
         error = true
         textError = "Некорректная сумма займа"
